@@ -14,6 +14,8 @@ class StaffPage extends Page {
     'ProfilePic' => 'Image',
   );
 
+  private static $has_many = array('Endorsements' => 'StaffEndorsement');
+
   function getCMSFields() {
     $fields = parent::getCMSFields();
 
