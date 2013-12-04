@@ -8,6 +8,16 @@
 	<div class="<% if Menu(2) %>span9<% else %>span12<% end_if %>">
 		<div id="main" role="main">
 			<h1 class="page-header">$Title</h1>
+			<div class="row">
+				<div class="clearfix <% if Menu(2) %>span6<% else %>span9<% end_if %>">
+					$Content.RichLinks
+				</div>
+				<% if RightContent %>
+				<div class="span3">
+					$RightContent
+				</div>
+				<% end_if %>
+			</div>
 			$Content.RichLinks
 			$Form
 			<% include RelatedPages %>

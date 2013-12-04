@@ -2,10 +2,21 @@
 class Page extends BasePage {
 
 	private static $db = array(
+		"RightContent" => "HTMLText"
 	);
 
 	private static $has_one = array(
 	);
+
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+
+		$fields->addFieldsToTab("Root.Right",
+			HTMLEditorField::create("RightContent", "Right-hand content")
+		);
+
+		return $fields;
+	}
 
 }
 
