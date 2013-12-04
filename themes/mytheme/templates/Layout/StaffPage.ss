@@ -16,7 +16,9 @@
           $Content.RichLinks
         </div>
       </div>
-      $Form
+      <h2>Endorse this person</h2>
+      $EndorsementForm
+
       <% include RelatedPages %>
       $PageComments
       <% include PrintShare %>

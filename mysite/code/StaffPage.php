@@ -44,10 +44,13 @@ class StaffPage_Controller extends Page_Controller {
 
     $fields = new FieldList(
       //fields
+      TextField::create('EndorsedBy', 'Your name'),
+      TextareaField::create('Comments', 'Comments')
     );
 
     $actions = new FeidlsList(
       //Actions
+      FormAction::create('addEndorsement', 'Endorse')
     );
 
     $form = new Form($this, 'EndorsementForm', $fields, $actions);
