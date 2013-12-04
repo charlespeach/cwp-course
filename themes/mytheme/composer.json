@@ -1,0 +1,17 @@
+{
+	"name": "cwp-themes/default",
+	"description": "CWP Default Theme",
+	"type": "silverstripe-theme",
+	"require": {
+		"composer/installers": "*",
+		"silverstripe/cms": ">=3.0",
+		"silverstripe/framework": ">=3.0",
+		"cwp/cwp": "~1.0",
+		"silverstripe-themes/module_bootstrap": "dev-ssexpress"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.2.x-dev"
+		}
+	}
+}

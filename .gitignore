@@ -32,7 +32,8 @@ tags
 taxonomy/
 testdata/
 testsession/
-themes/
+themes/default
+themes/module_bootstrap
 translatable/
 userforms/
 versionedfiles/
