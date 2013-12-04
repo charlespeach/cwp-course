@@ -57,4 +57,11 @@ class StaffPage_Controller extends Page_Controller {
 
     return $form;
   }
+
+  public function addEndorsement($data, Form $form) {
+    Debug::message('data');
+    Debug::dump('$data');
+    Debug::message('form');
+    Debug::dump('$form');
+  }
 }
