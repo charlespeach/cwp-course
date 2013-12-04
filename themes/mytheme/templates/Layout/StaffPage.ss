@@ -12,6 +12,7 @@
         <h2>$JobTitle</h2>
 
         <div class="clearfix">
+          <img class="left" src="$ProfilePic.SetWidth(300).Url">
           $Content.RichLinks
         </div>
       </div>
