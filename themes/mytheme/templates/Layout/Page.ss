@@ -18,7 +18,7 @@
 				</div>
 				<% end_if %>
 			</div>
-			$Content.RichLinks
+
 			$Form
 			<% include RelatedPages %>
 			$PageComments
