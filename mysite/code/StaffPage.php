@@ -53,7 +53,9 @@ class StaffPage_Controller extends Page_Controller {
       FormAction::create('addEndorsement', 'Endorse')
     );
 
-    $form = new Form($this, 'EndorsementForm', $fields, $actions);
+    $validator = RequiredFields::create(array('EndorsedBy', 'Comments'));
+
+    $form = new Form($this, 'EndorsementForm', $fields, $actions, $validator);
 
     return $form;
   }
