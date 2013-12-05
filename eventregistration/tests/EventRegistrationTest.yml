@@ -1,0 +1,11 @@
+EventPage:
+  NoSpaces:
+    Title: 'No Spaces'
+    URLSegment: 'no-spaces'
+    EnableRegistrations: true
+    MaxParticipants: 0
+  SpacesLeft:
+    Title: 'Spaces Available'
+    URLSegment: 'spaces-available'
+    EnableRegistrations: true
+    MaxParticipants: 10
