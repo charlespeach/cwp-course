@@ -11,10 +11,12 @@ class StaffPage extends Page {
   );
 
   static $has_one = array(
-    'ProfilePic' => 'Image',
+    'ProfilePic' => 'Image'
   );
 
-  private static $has_many = array('Endorsements' => 'StaffEndorsement');
+  private static $has_many = array(
+    'Endorsements' => 'StaffEndorsement'
+  );
 
   function getCMSFields() {
     $fields = parent::getCMSFields();
@@ -48,7 +50,7 @@ class StaffPage_Controller extends Page_Controller {
       TextareaField::create('Comments', 'Comments')
     );
 
-    $actions = new FeidlsList(
+    $actions = new FieldList(
       //Actions
       FormAction::create('addEndorsement', 'Endorse')
     );
