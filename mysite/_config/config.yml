@@ -15,3 +15,9 @@ MySQLDatabase:
   connection_charset: 'utf8'
 LeftAndMain:
   help_link: "https://www.cwp.govt.nz/user-help/"
+EventPage:
+  extensions:
+   - EventPageExtension
+EventPage_Controller:
+  extensions:
+   - EventPageControllerExtension

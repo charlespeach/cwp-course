@@ -25,6 +25,8 @@
 					<% end_if %>
 				</dl>
 			</div>
+
+			<% include EventRegistration %>
 		</div>
 		<div class="span9">
 			<h1 class="page-header">$Title</h1>
