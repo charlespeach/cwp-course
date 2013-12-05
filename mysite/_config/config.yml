@@ -10,7 +10,7 @@ SiteTree:
   extensions:
    - WorkflowEmbargoExpiryExtension
 SSViewer:
-  theme: 'default'
+  theme: 'mytheme'
 MySQLDatabase:
   connection_charset: 'utf8'
 LeftAndMain:
