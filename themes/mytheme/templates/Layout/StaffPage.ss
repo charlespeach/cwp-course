@@ -16,6 +16,15 @@
           $Content.RichLinks
         </div>
       </div>
+
+      <h2>Endorsements</h2>
+      <dl>
+      <% loop Endorsements.Sort("Created DESC") %>
+        <dt>$Comments</dt>
+        <dd>- $EndorsedBy</dd>
+      <% end_loop %>
+      </dl>
+
       <h2>Endorse this person</h2>
       $EndorsementForm
 
