@@ -1,0 +1,10 @@
+---
+Name: eventregistration
+After: 'framework/*', 'cms/*'
+---
+EventPage:
+  extensions:
+    - EventPageExtension
+EventPage_Controller:
+  extensions:
+    - EventPageControllerExtension

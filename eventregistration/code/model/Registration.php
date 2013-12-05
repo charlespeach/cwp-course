@@ -18,7 +18,7 @@ class Registration extends DataObject {
   );
 
   public function onBeforeWrite() {
-    if($this->Status == "Confirmed" && !Member::get()->filter('Email', $this->Email)->count()) {
+    if($this->Status == "Confirmed" && !Member::get()->filter('Email', $this->Email)->Count()) {
       $member = Member::create();
       $member->FirstName = $this->FirstName;
       $member->Surname = $this->Surname;
