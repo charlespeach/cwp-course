@@ -25,7 +25,7 @@ class EventPageControllerExtension extends DataExtension {
 
   public function doRegister($data, Form $form){
 
-    if ($this->SpacesAvaliable()) {
+    if ($this->SpacesAvailable()) {
       $registration = Registration::create();
       $form->saveInto($registration);
       $registration->EventID = $this->owner->ID;
@@ -38,7 +38,7 @@ class EventPageControllerExtension extends DataExtension {
     return $this->owner->redirectBack();
   }
 
-  public function SpacesAvaliable() {
+  public function SpacesAvailable() {
     $registrations = Registration::get()
                       ->filter('EventID', $this->owner->ID)
                       ->Count();
