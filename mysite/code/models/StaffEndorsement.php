@@ -15,4 +15,9 @@ class StaffEndorsement extends DataObject {
     'EndorsedBy',
     'Comments'
   );
+
+  private static $api_access = array(
+    'view' => array('EndorsedBy', 'Comments', 'Created', 'LastEdited', 'ParentID'),
+    'edit' => array('EndorsedBy', 'Comments', 'Created', 'LastEdited', 'ParentID')
+  );
 }

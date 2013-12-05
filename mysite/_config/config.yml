@@ -21,3 +21,11 @@ EventPage:
 EventPage_Controller:
   extensions:
     - EventPageControllerExtension
+Page:
+  api_access: false
+EventPage:
+  api_access: true
+StaffPage:
+  api_access: true
+Registration:
+  api_access: true
