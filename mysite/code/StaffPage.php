@@ -61,9 +61,15 @@ class StaffPage_Controller extends Page_Controller {
   }
 
   public function addEndorsement($data, Form $form) {
-    Debug::message('data');
-    Debug::dump('$data');
-    Debug::message('form');
-    Debug::dump('$form');
+    $endorsement = new StaffEndorsement();
+
+    $form->saveInto($endorsement);
+
+    $endorsement->ParentID = $this->ID;
+
+    $endorsement->write();
+
+    $form->sessionMessage('Thanks for endorsing ' . $this->Title, 'good');
+    $this->redirectBack();
   }
 }
