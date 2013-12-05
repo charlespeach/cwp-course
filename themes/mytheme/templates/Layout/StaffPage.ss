@@ -19,11 +19,15 @@
 
       <h2>Endorsements</h2>
       <dl>
-      <% loop Endorsements.Sort("Created DESC") %>
-        <dt>$Comments</dt>
-        <dd>- $EndorsedBy</dd>
+      <% loop PagedEndorsements %>
+         <dt>$Comments</dt>
+         <dd>$EndorsedBy</dd>
       <% end_loop %>
       </dl>
+
+      <% with PagedEndorsements %>
+        <% include Pagination %>
+      <% end_with %>
 
       <h2>Endorse this person</h2>
       $EndorsementForm

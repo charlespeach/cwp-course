@@ -74,4 +74,16 @@ class StaffPage_Controller extends Page_Controller {
     $form->sessionMessage('Thanks for endorsing ' . $this->Title, 'good');
     $this->redirectBack();
   }
+
+  public function PagedEndorsements() {
+
+    $list = new PaginatedList(
+      $this->Endorsements()->Sort("Created DESC"),
+      $this->request->getVars()
+    );
+
+    $list->setPageLength(5);
+
+    return $list;
+  }
 }

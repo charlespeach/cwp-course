@@ -1,30 +1,25 @@
-<% if MoreThanOnePage %>
-<div id="" class="pagination pagination-centered clear">
-	<h3 class="nonvisual-indicator">Pages</h3>
-	<ul id="PageNumbers">
-	<% if NotFirstPage %>
-		<li class="prev"><a title="View previous page of results" class="prev paginate-left" href="$PrevLink">&laquo; Prev</a></li>
-	<% else %>	
-		<li class="prev disabled"><a title="View previous page of results" class="prev paginate-left disabled">&laquo; Prev</a></li>
-	<% end_if %>
-	
-	<% loop PaginationSummary(4) %>
-		<% if CurrentBool %>
-			<li class="active"><a title="Viewing page $PageNum of results" class="disabled">$PageNum</a></li>
-		<% else %>
-			<% if Link %>
-				<li><a title="View page $PageNum of results" class="<% if BeforeCurrent %>paginate-left<% else %>paginate-right<% end_if %>" href="$Link">$PageNum</a></li>
-			<% else %>
-				<li class="disabled"><a class="disabled">...</a></li>						
-			<% end_if %>
-		<% end_if %>
-	<% end_loop %>
-	<% if NotLastPage %>
-		<li class="next"><a title="View next page of results" class="next paginate-right" href="$NextLink">Next &raquo;</a></li>
-	<% else %>
-		<li class="next disabled"><a title="View next page of results" class="next paginate-right disabled">Next &raquo;</a></li>
-	
-	<% end_if %>
-	</ul>
-</div>
+<p>Showing $FirstItem - $LastItem of $getTotalItems items</p>
+
+<p>
+<% if PrevLink %>
+<a href="$PrevLink">&laquo; Prev</a>
+<% else %>
+<span>&laquo; Prev</span>
 <% end_if %>
+&nbsp;
+
+<% loop Pages %>
+  <% if CurrentBool %>
+  <b>$PageNum</b>
+  <% else %>
+  <a href="$Link">$PageNum</a>
+  <% end_if%>
+<% end_loop %>
+&nbsp;
+
+<% if NextLink %>
+<a href="$NextLink">Next &raquo;</a>
+<% else %>
+<span>Next &raquo;</span>
+<% end_if %>
+</p>
