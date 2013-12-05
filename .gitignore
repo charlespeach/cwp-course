@@ -41,3 +41,4 @@ versionfeed/
 .idea
 .DS_Store
 vendor/
+._.DS_Store
