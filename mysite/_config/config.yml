@@ -17,7 +17,7 @@ LeftAndMain:
   help_link: "https://www.cwp.govt.nz/user-help/"
 EventPage:
   extensions:
-   - EventPageExtension
+    - EventPageExtension
 EventPage_Controller:
   extensions:
-   - EventPageControllerExtension
+    - EventPageControllerExtension
