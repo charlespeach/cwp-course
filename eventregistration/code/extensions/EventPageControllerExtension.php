@@ -25,12 +25,37 @@ class EventPageControllerExtension extends DataExtension {
 
   public function doRegister($data, Form $form){
 
-    $registration = Registration::create();
-    $form->saveInto($registration);
-    $registration->EventID = $this->owner->ID;
-    $registration->write();
-    $form->sessionMessage('Thanks for registering','good');
+    if ($this->SpacesAvaliable()) {
+      $registration = Registration::create();
+      $form->saveInto($registration);
+      $registration->EventID = $this->owner->ID;
+      $registration->write();
+      $form->sessionMessage('Thanks for registering','good');
+    } else {
+      $form->sessionMessage('All full up sorry.', 'warning');
+    }
 
     return $this->owner->redirectBack();
+  }
+
+  public function SpacesAvaliable() {
+    $registrations = Registration::get()
+                      ->filter('EventID', $this->owner->ID)
+                      ->Count();
+
+    $spacesleft = (int) ($this->owner->MaxParticipants - $registrations);
+
+    if ($spacesleft <= 0) {
+      return 0;
+    }
+
+    return $spacesleft;
+  }
+
+  public function Attending() {
+    return Registration::get()
+            ->filter('EventID', $this->owner->ID)
+            ->exclude('Status', 'Applied')
+            ->limit($this->owner->MaxParticipants);
   }
 }

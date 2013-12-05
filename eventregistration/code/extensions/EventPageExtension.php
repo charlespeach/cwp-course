@@ -3,7 +3,8 @@
 class EventPageExtension extends DataExtension {
 
   private static $db = array(
-    'EnableRegistrations' => 'Boolean'
+    'EnableRegistrations' => 'Boolean',
+    'MaxParticipants' => 'Int'
   );
 
   private static $has_many = array(
@@ -12,6 +13,7 @@ class EventPageExtension extends DataExtension {
 
   public function updateSettingsFields(FieldList $fields) {
     $fields->addFieldToTab('Root.Settings', CheckboxField::create('EnableRegistrations'));
+    $fields->addFieldToTab('Root.Settings', TextField::create('MaxParticipants'));
   }
 
   public function updateCMSFields(FieldList $fields){
