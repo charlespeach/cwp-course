@@ -10,4 +10,9 @@ class StaffEndorsement extends DataObject {
   private static $has_one = array(
     "Parent" => "StaffPage",
   );
+
+  private static $summary_fields = array(
+    'EndorsedBy',
+    'Comments'
+  );
 }

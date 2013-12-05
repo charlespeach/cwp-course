@@ -33,6 +33,18 @@ class StaffPage extends Page {
                            'Content'
     );
 
+    if ($this->ID) {
+      $fields->addFieldToTab(
+        'Root.Endorsements',
+        GridField::create(
+          'Endorsements',
+          'Endorsements',
+          $this->Endorsements(),
+          GridFieldConfig_RecordEditor::create()
+        )
+      );
+    }
+
     return $fields;
   }
 }
