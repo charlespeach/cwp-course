@@ -1,6 +1,6 @@
 <?php
 
-class Registration extends DataObject {
+class Registration extends DataObject implements PermissionProvider {
 
   private static $db = array(
     'Name' => 'Varchar(255)',
@@ -16,6 +16,38 @@ class Registration extends DataObject {
   private static $summary_fields = array(
     'Name','Organisation','Email','Status'
   );
+
+  public function canEdit($member=null){
+    return Permission::check('EDIT_REGISTRATION');
+  }
+
+  public function canView($member=null){
+    return Permission::check('VIEW_REGISTRATION');
+  }
+
+  public function canCreate($member=null){
+    return Permission::check('EDIT_REGISTRATION');
+  }
+
+  public function canDelete($member=null){
+    if(!$member){
+      $member = Member::currentUser();
+    }
+    return $member->inGroup('administrators');
+  }
+
+  public function providePermissions(){
+    return array(
+        'VIEW_REGISTRATION' => array(
+          'name' => 'View the Event Registrations',
+          'category' => 'Event Registrations',
+        ),
+        'EDIT_REGISTRATION' => array(
+          'name' => 'Edit or Create the Event Registrations',
+          'category' => 'Event Registrations'
+        )
+    );
+  }
 
   public function onBeforeWrite() {
     if($this->Status == "Confirmed" && !Member::get()->filter('Email', $this->Email)->Count()) {
